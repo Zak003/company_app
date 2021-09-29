@@ -1,0 +1,61 @@
+body, html{
+    background-color: #8ddda9;
+}
+img{
+    height: 100px;
+    width: 150px;
+}
+#contact100-form-title-1{
+    font-size: 20px;
+    font-family: sans-serif;
+    color: #fff;
+    line-height: 1.2;
+    float: right;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+
+#contact100-form-title-1-footer{
+    font-size: 40px;
+    color: #fff;
+    line-height: 1.8;
+    text-align: center;
+    padding-bottom: 80px;
+    font-family:  "Script MT", "Brush Script Std", cursive;
+    letter-spacing: 1px;
+}
+
+.contact100-form-btn-header{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 160px;
+    height: 50px;
+    background-color: #38d39f;
+    border-radius: 25px;
+    border-color: white;
+    /* font-family: Poppins-Regular; */
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    float:right;
+    margin-top: 10px;
+    margin-right: 10px;;
+}
+
+.logo{
+    height: 100px; 
+    width:200px;
+    margin: 10px;
+    position: relative;
+}
