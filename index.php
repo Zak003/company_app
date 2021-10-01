@@ -54,8 +54,8 @@
 				</span>
 			</div>
 			
-			<button class="contact100-form-btn" onclick="getlocation()">Get your current location</button>
-		<p id="demo1"></p>
+			<!--<button class="contact100-form-btn" onclick="getlocation()">Get your current location</button>-->
+		<p id="demo1" hidden></p>
 		
 		<script>
 			var variable1 = document.getElementById("demo1");
@@ -78,17 +78,19 @@
 					show(data);
 				}
 				// Calling that async function
-				
+				getlocation();
 				
 				function show(data) {
 				
 				// Setting innerHTML as tab variable
-				var latituda = document.getElementById("lat").innerHTML = data.results[0].locations[0].street;
+				/*var latituda = document.getElementById("lat").innerHTML = data.results[0].locations[0].street;
 				var longituda = document.getElementById("long").innerHTML = data.results[0].locations[0].adminArea5;
 				document.getElementById("izpis").innerHTML = latituda;
-				document.getElementById("drugiizpis").innerHTML = longituda;
-				document.getElementById("lokacija_street").value = latituda;
-				document.getElementById("lokacija_mesto").value = longituda;
+				document.getElementById("drugiizpis").innerHTML = longituda;*/
+				var x = document.getElementById("lat").innerHTML;
+				var y = document.getElementById("long").innerHTML;
+				document.getElementById("lokacija_street").value = x;
+				document.getElementById("lokacija_mesto").value = y;
 			}
 			function showLoc(pos) {
 			variable1.innerHTML =
@@ -98,8 +100,10 @@
 				pos.coords.longitude + "</p>";
 				var x = document.getElementById("lat").innerText;
 				var y = document.getElementById("long").innerText;
-				document.getElementById("lat").style.display = 'none';
-				document.getElementById("long").style.display = 'none';
+				document.getElementById("izpis").innerHTML = x;
+				document.getElementById("drugiizpis").innerHTML = y;
+				/*document.getElementById("lat").style.display = x;
+				document.getElementById("long").style.display = y;*/
 				/*document.write(x);
 				document.write(y);*/
 				const api_url = 
@@ -133,7 +137,7 @@
 
 			<form action="insert_base.php" class="contact100-form validate-form" method="post" enctype="multipart/form-data">
 			
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
+				<!--<div class="wrap-input100 validate-input" data-validate="Name is required">
 					<span class="label-input100">Street:</span>
 					<input type="text" class="input100" id="lokacija_street" name="lokacija_street" hidden> <p id="izpis"></p>
 					<span class="focus-input100"></span>
@@ -143,7 +147,11 @@
 					<span class="label-input100">City:</span>
 					<input type="text" class="input100" id="lokacija_mesto" name="lokacija_mesto" hidden> <p id="drugiizpis"></p>
 					<span class="focus-input100"></span>
-				</div>
+				</div>-->
+
+					<input type="text" class="input100" id="lokacija_street" name="lokacija_street" hidden><p id="izpis" hidden></p>
+
+					<input type="text" class="input100" id="lokacija_mesto" name="lokacija_mesto" hidden><p id="drugiizpis" hidden></p>
 				
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
 					<span class="label-input100">Company name:</span>
@@ -156,12 +164,8 @@
 					<input class="input100" type="text" name="ime_popravila" required>
 					<span class="focus-input100"></span>
 				</div>
-				
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Date:</span>
-					<input class="input100" type="date" name="datum" required>
-					<span class="focus-input100"></span>
-				</div>
+
+					<input class="input100"  name="datum" value="<?php echo date("Y-m-d H:i:s"); ?>" hidden>
 
 				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 					<span class="label-input100">Notes:</span>
@@ -178,13 +182,13 @@
 				</div>
 
 				<div class="container-contact100-form-btn">
-					<!--<input type="submit" name="submit_rep" value="Submit" class="contact100-form-btn">-->
-					<button class="contact100-form-btn" name="submit_rep">
+					<input type="submit" name="submit_rep" value="Submit" class="contact100-form-btn">
+					<!--<button class="contact100-form-btn" name="submit_rep">
 						<span>
 							Submit
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 						</span>
-					</button>
+					</button>-->
 				</div>
 			</form>
 		</div>

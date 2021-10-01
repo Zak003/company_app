@@ -13,6 +13,7 @@
 <h1> Latituda, longituda </h1>
 
 <button class="geeks" onclick="getlocation()">Click Me</button>
+
   <p id="demo1"></p>
  
   <script>
@@ -37,7 +38,7 @@
         }
         // Calling that async function
         
-          
+        
         function show(data) {
           
           // Setting innerHTML as tab variable
@@ -50,10 +51,10 @@
         pos.coords.latitude + "</p>" +
         "<p id='long'>" +
         pos.coords.longitude + "</p>";
-        var x = document.getElementById("lat").innerText;
+        /*var x = document.getElementById("lat").innerText;
         var y = document.getElementById("long").innerText;
-        /*document.write(x);
-        document.write(y);*/
+        /*document.write(x);*/
+        /*document.write(y);*/
         const api_url = 
         "https://open.mapquestapi.com/geocoding/v1/reverse?key=7MdftJsO5aUZZuPzO8PsNMqhCnlQjK0a&location="+x+","+y+"&includeRoadMetadata=true&includeNearestIntersection=true";
         getapi(api_url);

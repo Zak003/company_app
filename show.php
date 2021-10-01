@@ -35,7 +35,7 @@
 					<div class="table-wrap">
 					<?php
 					//zapis SQL stavka 
-					$sql="SELECT p.id AS popravilo_id, p.ime AS ime_popravila, p.datum AS datum, p.lokacija AS lokacija, p.podjetje AS podjetje, p.opombe AS opombe, p.uporabnik_id AS uporabnik_id, p.slika AS slika, u.imePriimek AS imePriimek
+					$sql="SELECT p.id AS popravilo_id, p.ime AS ime_popravila, p.datum AS datum, p.lokacija_cord_x AS x, p.lokacija_cord_y AS y, p.podjetje AS podjetje, p.opombe AS opombe, p.uporabnik_id AS uporabnik_id, p.slika AS slika, u.imePriimek AS imePriimek
 					FROM popravila p INNER JOIN uporabniki u ON p.uporabnik_id=u.id";
 
 					//sprožimo poizvedbo
@@ -48,7 +48,8 @@
 						      <th>Repair ID</th>
 						      <th>Repair name</th>
 						      <th>Date</th>
-						      <th>Location</th>
+						      <th>Location_cord_x</th>
+						      <th>Location_cord_y</th>
 						      <th>Company</th>
 							  <th>Notes</th>
 							  <th>User</th>
@@ -70,7 +71,8 @@
 									.'<th scope="row">'.$row['popravilo_id'].'</th>'
 									.'<td>'.$row['ime_popravila'].'</td>'
 									.'<td>'.date('d/m/y', $date).'</td>'
-									.'<td>'.$row['lokacija'].'</td>' 
+									.'<td>'.$row['x'].'</td>'
+									.'<td>'.$row['y'].'</td>' 
 									.'<td>'.$row['podjetje'].'</td>'
 									.'<td>'.$row['opombe'].'</td>'
 									.'<td>'.$row['imePriimek'].'</td>'
@@ -93,7 +95,8 @@
 									.'<th scope="row">'.$row['popravilo_id'].'</th>'
 									.'<td>'.$row['ime_popravila'].'</td>'
 									.'<td>'.date('d/m/y', $date).'</td>'
-									.'<td>'.$row['lokacija'].'</td>' 
+									.'<td>'.$row['x'].'</td>'
+									.'<td>'.$row['y'].'</td>' 
 									.'<td>'.$row['podjetje'].'</td>'
 									.'<td>'.$row['opombe'].'</td>'
 									.'<td>'.$row['imePriimek'].'</td>'

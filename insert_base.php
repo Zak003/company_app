@@ -7,7 +7,8 @@
 	$lokacija_mesto=$_POST['lokacija_mesto'];
 	$ime_podjetja=$_POST['ime_podjetja'];
 	$ime_popravila=$_POST['ime_popravila'];
-	$datum = date('Y-m-d', strtotime($_POST['datum']));
+	//$datum = date('Y-m-d', strtotime($_POST['datum']));
+	$datum = date('Y-m-d H:i:s', strtotime($_POST['datum']));
 	$opombe=$_POST['opombe'];
 	$uporabnik_id=$_POST['uporabnik_id'];
 	//za slike
@@ -32,7 +33,7 @@
 	//zapis SQL stavka 
 	if(isset($_POST['submit_rep']))
 	{
-		$sql="INSERT INTO popravila VALUES (NULL, '$ime_popravila', '$datum', '$lokacija_mesto', '$ime_podjetja', '$opombe', '$uporabnik_id', '$folder')";	//v oklepaj zapišemo vrednosti ki jih želimo vnesti
+		$sql="INSERT INTO popravila VALUES (NULL, '$ime_popravila', '$datum', '$lokacija_street' ,'$lokacija_mesto', '$ime_podjetja', '$opombe', '$uporabnik_id', '$folder')";	//v oklepaj zapišemo vrednosti ki jih želimo vnesti
 		$result=mysqli_query($link, $sql);
 
 		$uploaddir = 'pictures/';
